@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Good Back Basics — Fix Your Back Pain at Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-bg: #FAFAF8;
+      --color-bg-alt: #F0EEE8;
+      --color-text: #1A1A18;
+      --color-text-secondary: #6B6B6B;
+      --color-accent: #2D6A4F;
+      --color-accent-light: #E8F5EE;
+      --color-surface: #FFFFFF;
+    }
+
+    * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text);
+    }
+
+    .section-primary { background: var(--color-bg); }
+    .section-alt { background: var(--color-bg-alt); }
+
+    .cta-btn {
+      background: var(--color-accent);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(45,106,79,0.25), 0 1px 3px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(45,106,79,0.3), 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .cta-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(45,106,79,0.2);
+    }
+    .cta-btn:focus-visible {
+      outline: 3px solid rgba(45,106,79,0.4);
+      outline-offset: 3px;
+    }
+
+    .card {
+      background: var(--color-surface);
+      border-radius: 16px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.04);
+    }
+
+    .card-lifted {
+      background: var(--color-surface);
+      border-radius: 16px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03), 0 8px 32px rgba(0,0,0,0.06);
+    }
+
+    .trust-icon {
+      background: var(--color-accent-light);
+      border: 1px solid rgba(45,106,79,0.1);
+    }
+
+    .pain-item {
+      border-left: 3px solid var(--color-accent);
+      background: var(--color-surface);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.03);
+    }
+
+    .failed-card {
+      background: var(--color-surface);
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03), 0 2px 8px rgba(0,0,0,0.03);
+    }
+
+    .module-card {
+      background: var(--color-surface);
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03), 0 8px 24px rgba(0,0,0,0.05);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .bonus-card {
+      background: var(--color-surface);
+      border: 1px solid rgba(45,106,79,0.12);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.03), 0 8px 24px rgba(0,0,0,0.05);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .price-card {
+      background: var(--color-surface);
+      border: 2px solid var(--color-accent);
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.04), 0 16px 48px rgba(45,106,79,0.1);
+    }
+
+    .guarantee-card {
+      background: var(--color-accent-light);
+      border: 2px solid rgba(45,106,79,0.2);
+      border-radius: 20px;
+    }
+
+    .faq-item {
+      border: 1px solid rgba(0,0,0,0.08);
+      background: var(--color-surface);
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .faq-item[open] {
+      border-color: rgba(45,106,79,0.25);
+      box-shadow: 0 2px 8px rgba(45,106,79,0.06);
+    }
+    .faq-item summary {
+      cursor: pointer;
+      list-style: none;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: var(--color-accent);
+      transition: transform 0.2s ease;
+    }
+    .faq-item[open] summary::after {
+      content: '\2212';
+    }
+
+    .video-testimonial {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      aspect-ratio: 9/16;
+      max-height: 400px;
+      background: #e8e8e4;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .video-testimonial video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .video-testimonial .play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.2);
+      transition: opacity 0.2s ease;
+      z-index: 2;
+    }
+    .video-testimonial .play-overlay svg {
+      width: 48px;
+      height: 48px;
+      opacity: 0.95;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+    }
+    .video-testimonial.playing .play-overlay { opacity: 0; pointer-events: none; }
+
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
+    }
+    .sticky-cta.visible { transform: translateY(0); }
+
+    .star { color: #E8A020; }
+    .checkmark { color: var(--color-accent); }
+    .crossmark { color: #C0392B; }
+
+    video::-webkit-media-controls-panel { background: transparent; }
+
+    /* ===== DESKTOP SCALING (min-width: 768px) ===== */
+    @media (min-width: 768px) {
+      /* Wider containers */
+      .container-wide { max-width: 1060px; margin-left: auto; margin-right: auto; }
+      .container-mid { max-width: 860px; margin-left: auto; margin-right: auto; }
+      .container-narrow { max-width: 680px; margin-left: auto; margin-right: auto; }
+
+      /* Typography scaling */
+      .hero-headline { font-size: clamp(2.5rem, 5vw, 3.75rem) !important; line-height: 1.1; }
+      .section-heading { font-size: clamp(2rem, 3.5vw, 2.625rem) !important; }
+      .body-lg { font-size: 1.125rem !important; line-height: 1.75; }
+      .body-md { font-size: 1.0625rem !important; line-height: 1.7; }
+
+      /* Card padding scaling */
+      .card-pad-lg { padding: 2rem 2.5rem !important; }
+
+      /* Number badges */
+      .num-badge { width: 48px !important; height: 48px !important; font-size: 1.125rem !important; }
+
+      /* Testimonial video grid */
+      .video-testimonial { max-height: 480px; }
+
+      /* FAQ items */
+      .faq-item summary { padding: 1.5rem 1.75rem !important; }
+      .faq-item > div { padding-left: 1.75rem !important; padding-right: 1.75rem !important; padding-bottom: 1.5rem !important; }
+
+      /* Price card scaling */
+      .price-amount { font-size: 4.5rem !important; }
+
+      /* CTA buttons */
+      .cta-btn-lg { padding: 1.125rem 3rem !important; font-size: 1.2rem !important; }
+
+      /* "What You Get" cards — bigger icon, title, description */
+      .feature-card h3 { font-size: 1.0625rem !important; }
+      .feature-card p { font-size: 0.9375rem !important; line-height: 1.65; }
+
+      /* Hero sub-headline — bolder for readability */
+      .hero-sub { color: var(--color-text) !important; font-weight: 500 !important; font-size: 1.1875rem !important; }
+
+      /* Authority / bio cards — scale up names, titles, body */
+      .bio-card h3 { font-size: 1.625rem !important; }
+      .bio-card .bio-title { font-size: 0.75rem !important; }
+      .bio-card .bio-body { font-size: 0.9375rem !important; line-height: 1.7; }
+
+      /* Pricing comparison rows */
+      .price-row-label { font-size: 0.9375rem !important; }
+      .price-row-amount { font-size: 0.9375rem !important; }
+
+      /* Guarantee & urgency body text */
+      .readable-body { font-size: 0.9375rem !important; line-height: 1.75; }
+
+      /* Final CTA section — darker sub-text */
+      .final-sub { color: var(--color-text) !important; font-weight: 500 !important; }
+      .final-body { font-size: 0.9375rem !important; line-height: 1.7; color: #4a4a4a !important; }
+      .final-checklist span { font-size: 0.9375rem !important; color: #4a4a4a !important; }
+
+      /* Why-combo card */
+      .combo-card p { font-size: 0.9375rem !important; line-height: 1.7; }
+    }
+
+    @media (min-width: 1024px) {
+      .container-wide { max-width: 1100px; }
+      .container-mid { max-width: 920px; }
+      .hero-headline { font-size: 3.75rem !important; }
+      .section-heading { font-size: 2.625rem !important; }
+
+      .feature-card h3 { font-size: 1.125rem !important; }
+      .feature-card p { font-size: 1rem !important; }
+      .hero-sub { font-size: 1.25rem !important; }
+      .bio-card h3 { font-size: 1.75rem !important; }
+      .bio-card .bio-title { font-size: 0.8125rem !important; }
+      .bio-card .bio-body { font-size: 1rem !important; }
+      .price-row-label { font-size: 1rem !important; }
+      .price-row-amount { font-size: 1rem !important; }
+      .readable-body { font-size: 1rem !important; }
+      .final-body { font-size: 1rem !important; }
+      .final-checklist span { font-size: 1rem !important; }
+      .combo-card p { font-size: 1rem !important; }
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"DM Serif Display"', 'serif'],
+            body: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- ==================== STICKY MOBILE CTA ==================== -->
+  <div id="stickyCta" class="sticky-cta md:hidden">
+    <div class="px-4 py-3">
+      <a href="#pricing" class="cta-btn block w-full text-center py-3.5 rounded-xl font-body font-bold text-base tracking-wide">
+        Get Instant Access for $27 &rarr;
+      </a>
+    </div>
+  </div>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="section-alt relative overflow-hidden">
+    <div class="container-mid px-5 pt-8 pb-12 md:pt-14 md:pb-20">
+      <!-- Logo -->
+      <div class="flex justify-center mb-8">
+        <img src="Sales page Media/Logo.png" alt="Good Back Basics" class="h-14 md:h-16">
+      </div>
+
+      <!-- Pre-headline -->
+      <p class="text-center font-body font-semibold text-sm md:text-base tracking-widest uppercase mb-4" style="color: var(--color-accent);">
+        For People With a Sedentary Lifestyle
+      </p>
+
+      <!-- Headline -->
+      <h1 class="hero-headline font-display text-3xl md:text-5xl lg:text-[3.4rem] text-center leading-tight md:leading-[1.1] tracking-tight mb-5" style="color: var(--color-text);">
+        A 10-Minute At-Home Program That Addresses The Root Cause Of Back Pain Most Treatments Never Touch
+      </h1>
+
+      <!-- Sub-headline -->
+      <p class="body-lg hero-sub text-center font-body text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-8" style="color: var(--color-text-secondary);">
+        So you can sit without discomfort, sleep tight, and feel confident in your back again
+      </p>
+
+      <!-- Video -->
+      <div class="relative rounded-2xl overflow-hidden mb-8 mx-auto max-w-lg card-lifted">
+        <video autoplay muted loop playsinline class="w-full block" poster="Thumbnails/Good Back Basics_thumbnail.jpg">
+          <source src="Sales page Media/Lower back infographic.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- Social proof -->
+      <div class="flex items-center justify-center gap-2 mb-6">
+        <div class="flex gap-0.5">
+          <span class="star text-lg">&starf;</span>
+          <span class="star text-lg">&starf;</span>
+          <span class="star text-lg">&starf;</span>
+          <span class="star text-lg">&starf;</span>
+          <span class="star text-lg">&starf;</span>
+        </div>
+        <span class="font-body text-sm" style="color: var(--color-text-secondary);">Trusted by 1,500+ people who fixed their back at home</span>
+      </div>
+
+      <!-- CTA -->
+      <div class="flex justify-center mb-8">
+        <a href="#pricing" class="cta-btn cta-btn-lg inline-block px-10 py-4 rounded-xl font-body font-bold text-base md:text-lg tracking-wide">
+          Yes &mdash; Show Me the System &rarr;
+        </a>
+      </div>
+
+      <!-- Trust bar -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div class="trust-icon rounded-xl px-3 py-3 text-center">
+          <span class="text-xl mb-1 block">&#x1F3E5;</span>
+          <span class="font-body text-xs leading-tight block" style="color: var(--color-text-secondary);">Proven on 5,000+ Patients</span>
+        </div>
+        <div class="trust-icon rounded-xl px-3 py-3 text-center">
+          <span class="text-xl mb-1 block">&#x1F393;</span>
+          <span class="font-body text-xs leading-tight block" style="color: var(--color-text-secondary);">Built by a Team of Experts</span>
+        </div>
+        <div class="trust-icon rounded-xl px-3 py-3 text-center">
+          <span class="text-xl mb-1 block">&#x1F3E0;</span>
+          <span class="font-body text-xs leading-tight block" style="color: var(--color-text-secondary);">100% Home-Based &mdash; No Equipment</span>
+        </div>
+        <div class="trust-icon rounded-xl px-3 py-3 text-center">
+          <span class="text-xl mb-1 block">&#x1F6E1;</span>
+          <span class="font-body text-xs leading-tight block" style="color: var(--color-text-secondary);">30-Day Money-Back Guarantee</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PAIN RECOGNITION ==================== -->
+  <section class="section-primary py-14 md:py-20">
+    <div class="container-mid px-5">
+      <h2 class="section-heading font-display text-2xl md:text-4xl text-center mb-3" style="color: var(--color-text);">Do any of these feel familiar?</h2>
+      <div class="w-12 h-0.5 mx-auto mb-10 rounded-full" style="background: var(--color-accent);"></div>
+
+      <div class="space-y-4">
+        <div class="pain-item rounded-lg px-5 py-4">
+          <p class="font-body text-sm md:text-base leading-relaxed" style="color: var(--color-text-secondary);">Waking up in the morning <strong style="color: var(--color-text);">stiff as a board.</strong></p>
+        </div>
+        <div class="pain-item rounded-lg px-5 py-4">
+          <p class="font-body text-sm md:text-base leading-relaxed" style="color: var(--color-text-secondary);">Sitting straight in a chair <strong style="color: var(--color-text);">feels impossible.</strong></p>
+        </div>
+        <div class="pain-item rounded-lg px-5 py-4">
+          <p class="font-body text-sm md:text-base leading-relaxed" style="color: var(--color-text-secondary);">Picking something up off the floor <strong style="color: var(--color-text);">requires a strategic plan.</strong></p>
+        </div>
+        <div class="pain-item rounded-lg px-5 py-4">
+          <p class="font-body text-sm md:text-base leading-relaxed" style="color: var(--color-text-secondary);">Going to bed and already knowing <strong style="color: var(--color-text);">it's not going to be a good night.</strong></p>
+        </div>
+        <div class="pain-item rounded-lg px-5 py-4">
+          <p class="font-body text-sm md:text-base leading-relaxed" style="color: var(--color-text-secondary);">A drawer full of gadgets, braces, and supports that each <strong style="color: var(--color-text);">promised to be the answer.</strong></p>
+        </div>
+        <div class="pain-item rounded-lg px-5 py-4">
+          <p class="font-body text-sm md:text-base leading-relaxed" style="color: var(--color-text-secondary);">Another appointment, another temporary fix, <strong style="color: var(--color-text);">another invoice.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAILED SOLUTIONS ==================== -->
+  <section class="section-alt py-14 md:py-20">
+    <div class="container-mid px-5">
+      <h2 class="section-heading font-display text-2xl md:text-4xl text-center mb-3" style="color: var(--color-text);">Here are popular methods you might have tried that didn't work.</h2>
+      <div class="w-12 h-0.5 mx-auto mb-10 rounded-full" style="background: var(--color-accent);"></div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="failed-card rounded-xl p-5 md:p-6 flex flex-col">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style="background: var(--color-accent); opacity: 0.1;"></div>
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-3 -mt-[52px]" style="background: transparent;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </div>
+          <h3 class="font-display text-lg md:text-xl mb-2" style="color: var(--color-accent);">Chiropractic Adjustments</h3>
+          <p class="font-body text-sm leading-relaxed" style="color: var(--color-text-secondary);">The relief feels immediate but you're back on the table a week later. You're not fixing the problem. You're resetting it.</p>
+        </div>
+        <div class="failed-card rounded-xl p-5 md:p-6 flex flex-col">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style="background: var(--color-accent); opacity: 0.1;"></div>
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-3 -mt-[52px]" style="background: transparent;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </div>
+          <h3 class="font-display text-lg md:text-xl mb-2" style="color: var(--color-accent);">Stretching Routines</h3>
+          <p class="font-body text-sm leading-relaxed" style="color: var(--color-text-secondary);">Excessive stretching can make an unstable spine worse. If a spine is hypermobile, stretching loosens the one thing holding it together.</p>
+        </div>
+        <div class="failed-card rounded-xl p-5 md:p-6 flex flex-col">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style="background: var(--color-accent); opacity: 0.1;"></div>
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-3 -mt-[52px]" style="background: transparent;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </div>
+          <h3 class="font-display text-lg md:text-xl mb-2" style="color: var(--color-accent);">Magic Devices on Internet</h3>
+          <p class="font-body text-sm leading-relaxed" style="color: var(--color-text-secondary);">They look promising at first but ultimately, they're a band-aid solution. In 15 years of practice, we haven't found one that worked long-term.</p>
+        </div>
+        <div class="failed-card rounded-xl p-5 md:p-6 flex flex-col">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-3" style="background: var(--color-accent); opacity: 0.1;"></div>
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-3 -mt-[52px]" style="background: transparent;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          </div>
+          <h3 class="font-display text-lg md:text-xl mb-2" style="color: var(--color-accent);">Generic Physiotherapy</h3>
+          <p class="font-body text-sm leading-relaxed" style="color: var(--color-text-secondary);">It covers the basics but not your specific movement patterns. The right exercises in the wrong sequence don't fix spinal instability.</p>
+        </div>
+      </div>
+
+      <!-- Expert quote — spotlight -->
+      <div class="card-lifted mt-10 p-8 md:p-10 text-center">
+        <blockquote class="font-body text-lg md:text-xl leading-relaxed italic mb-6 max-w-2xl mx-auto" style="color: var(--color-text);">
+          &ldquo;Every single one of these approaches treats the symptom rather than the structural problem underneath it. Until someone addresses why the spine keeps getting irritated, the pain will keep returning. That&rsquo;s not pessimism. That&rsquo;s mechanics.&rdquo;
+        </blockquote>
+        <div class="flex items-center justify-center gap-3">
+          <img src="Sales page Media/Marcin Dochnal.avif" alt="Dr. Marcin Dorchnal" class="w-12 h-12 rounded-full object-cover border-2" style="border-color: rgba(45,106,79,0.2);">
+          <div class="text-left">
+            <p class="font-body font-semibold text-base" style="color: var(--color-text);">Dr. Marcin Dorchnal</p>
+            <p class="font-body text-sm" style="color: var(--color-text-secondary);">Chiropractor</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ROOT CAUSE ==================== -->
+  <section class="section-primary py-14 md:py-20">
+    <div class="container-mid px-5">
+      <p class="text-center font-body font-semibold text-xs tracking-widest uppercase mb-3" style="color: var(--color-accent);">The Root Cause</p>
+      <h2 class="section-heading font-display text-2xl md:text-4xl text-center mb-3" style="color: var(--color-text);">The Perfect Storm of Dysfunction</h2>
+      <div class="w-12 h-0.5 mx-auto mb-8 rounded-full" style="background: var(--color-accent);"></div>
+
+      <p class="body-md font-body text-sm md:text-base leading-relaxed text-center mb-10" style="color: var(--color-text-secondary);">
+        After 15 years of clinical practice and seeing 5,000+ patient treatments, Dr. Marcin Dorchnal and Paul Bielak identified a pattern that almost every chronic back pain sufferer shares. Modern life &mdash; 8 to 12 hours of sitting daily &mdash; creates <strong style="color: var(--color-text);">three simultaneous breakdowns</strong> in the back's support system.
+      </p>
+
+      <div class="space-y-5 mb-10">
+        <div class="card card-pad-lg p-5 md:p-6">
+          <div class="flex items-start gap-4">
+            <span class="num-badge flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center font-body font-bold text-sm text-white" style="background: var(--color-accent);">1</span>
+            <div>
+              <h3 class="font-display text-lg md:text-xl mb-2" style="color: var(--color-text);">Lost Core Stability &amp; Posture</h3>
+              <p class="font-body text-base leading-relaxed" style="color: var(--color-text-secondary);">When the body doesn't receive intermittent and appropriate movement, some structures become fatigued while others become lengthened, painful and weak.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-pad-lg p-5 md:p-6">
+          <div class="flex items-start gap-4">
+            <span class="num-badge flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center font-body font-bold text-sm text-white" style="background: var(--color-accent);">2</span>
+            <div>
+              <h3 class="font-display text-lg md:text-xl mb-2" style="color: var(--color-text);">Flexibility Restrictions</h3>
+              <p class="font-body text-base leading-relaxed" style="color: var(--color-text-secondary);">Tight hips and weak glutes create unnatural pressure through your lumbar spine during every movement. Your body tries to compensate &mdash; and every compensation creates a new pressure point. This is why "your back going out" from something trivial is actually the final straw, not the cause.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card card-pad-lg p-5 md:p-6">
+          <div class="flex items-start gap-4">
+            <span class="num-badge flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center font-body font-bold text-sm text-white" style="background: var(--color-accent);">3</span>
+            <div>
+              <h3 class="font-display text-lg md:text-xl mb-2" style="color: var(--color-text);">Movement Imbalances</h3>
+              <p class="font-body text-base leading-relaxed" style="color: var(--color-text-secondary);">Your body has adapted to the sitting position. The muscles on one side do too much, the muscles on the other do too little. When you try something dynamic &mdash; lift, twist, reach &mdash; this imbalance creates the exact conditions for injury. This is the hidden driver of "random" flare-ups.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1. Heading — centered, bigger -->
+      <h3 class="font-display text-xl md:text-3xl text-center mb-4" style="color: var(--color-accent);">Why Your Spine Keeps Getting Irritated</h3>
+
+      <!-- 2. First paragraph — centered -->
+      <p class="font-body text-base leading-relaxed text-center max-w-2xl mx-auto mb-8" style="color: var(--color-text-secondary);">
+        Think of your spine like a <strong style="color: var(--color-text);">camera on a tripod.</strong> When the tripod legs are stable and balanced, the camera holds still &mdash; but when the legs are uneven or loose, the camera starts shaking. That's your spine right now.
+      </p>
+
+      <!-- 3. Animation — full width centered -->
+      <div class="tw-wrap" style="margin:0 auto; max-width:750px; padding:28px 24px 20px; background:var(--color-bg); border:1px solid rgba(0,0,0,0.15); border-radius:12px;">
+        <style>
+          .tw-wrap .tw-title { display:none; }
+          .tw-wrap .tw-sub {
+            text-align: center;
+            font-size: 13px;
+            color: #6b6b6b;
+            margin: 0 0 4px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+          }
+          .tw-btn-row {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 12px 0 0;
+            flex-wrap: wrap;
+          }
+          .tw-pill {
+            font-size: 12px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid #c8bfa8;
+            background: #fff;
+            color: #0d1f2d;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 500;
+            transition: background .35s, border-color .35s, color .35s;
+            position: relative;
+            overflow: hidden;
+          }
+          .tw-pill.active-leg {
+            background: #7a1f1f;
+            border-color: #7a1f1f;
+            color: #fde8e8;
+          }
+          .tw-pill.tw-replay {
+            cursor: pointer;
+            border-color: #0d1f2d;
+            color: #0d1f2d;
+          }
+          .tw-pill.tw-replay:hover { background: #f0ebe2; }
+          .tw-pill::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255,255,255,0.25);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .4s ease;
+          }
+          .tw-pill.tw-flash::after { transform: scaleX(1); }
+          .tw-dots {
+            display: flex;
+            justify-content: center;
+            gap: 7px;
+            margin: 10px 0 0;
+          }
+          .tw-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #c8bfa8;
+            transition: background .4s;
+          }
+          .tw-dot.done    { background: #1D9E75; }
+          .tw-dot.current { background: #c0392b; }
+          .tw-dot.all-bad { background: #7a1f1f; }
+          .tw-status {
+            text-align: center;
+            font-size: 13px;
+            color: #6b6b6b;
+            margin: 10px 12px 0;
+            min-height: 38px;
+            line-height: 1.5;
+            transition: color .4s;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+          }
+          .tw-status.warn { color: #7a4a00; font-weight: 600; }
+          .tw-status.bad  { color: #7a1f1f; font-weight: 600; }
+        </style>
+
+        <p class="tw-sub">Watch how each breakdown adds up</p>
+
+        <svg id="tw-sv" width="100%" viewBox="0 0 680 360" style="display:block;">
+          <defs>
+            <marker id="tw-aw" viewBox="0 0 10 10" refX="8" refY="5"
+                    markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+              <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke"
+                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </marker>
+          </defs>
+
+          <ellipse id="tw-shad" cx="340" cy="322" rx="130" ry="9"
+                   fill="#0d1f2d" opacity="0.06"/>
+
+          <g id="tw-spg">
+            <g id="tw-verts"></g>
+            <line x1="340" y1="82" x2="340" y2="272"
+                  stroke="#0d1f2d" stroke-width="1" opacity="0.12"
+                  stroke-dasharray="3 4"/>
+          </g>
+
+          <line id="tw-l1" x1="340" y1="270" x2="220" y2="316"
+                stroke="#1D9E75" stroke-width="5" stroke-linecap="round"/>
+          <ellipse id="tw-f1" cx="220" cy="317" rx="9" ry="4" fill="#1D9E75"/>
+
+          <line id="tw-l2" x1="340" y1="270" x2="460" y2="316"
+                stroke="#1D9E75" stroke-width="5" stroke-linecap="round"/>
+          <ellipse id="tw-f2" cx="460" cy="317" rx="9" ry="4" fill="#1D9E75"/>
+
+          <line id="tw-l3" x1="340" y1="270" x2="340" y2="320"
+                stroke="#1D9E75" stroke-width="5" stroke-linecap="round"/>
+          <ellipse id="tw-f3" cx="340" cy="321" rx="9" ry="4" fill="#1D9E75"/>
+
+          <text id="tw-lb1" x="155" y="306" text-anchor="middle"
+                font-size="11" font-family="'Plus Jakarta Sans',sans-serif"
+                fill="#0F6E56" font-weight="600">Core stability</text>
+          <text id="tw-ls1" x="155" y="319" text-anchor="middle"
+                font-size="10" font-family="'Plus Jakarta Sans',sans-serif" fill="#6b6b6b">leg 1</text>
+
+          <text id="tw-lb2" x="527" y="306" text-anchor="middle"
+                font-size="11" font-family="'Plus Jakarta Sans',sans-serif"
+                fill="#0F6E56" font-weight="600">Flexibility</text>
+          <text id="tw-ls2" x="527" y="319" text-anchor="middle"
+                font-size="10" font-family="'Plus Jakarta Sans',sans-serif" fill="#6b6b6b">leg 2</text>
+
+          <text id="tw-lb3" x="340" y="342" text-anchor="middle"
+                font-size="11" font-family="'Plus Jakarta Sans',sans-serif"
+                fill="#0F6E56" font-weight="600">Movement balance</text>
+          <text id="tw-ls3" x="340" y="355" text-anchor="middle"
+                font-size="10" font-family="'Plus Jakarta Sans',sans-serif" fill="#6b6b6b">leg 3</text>
+
+          <g id="tw-ck1" opacity="0" style="transition:opacity .4s">
+            <line x1="245" y1="284" x2="257" y2="295" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
+            <line x1="249" y1="276" x2="261" y2="300" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round"/>
+          </g>
+          <g id="tw-ck2" opacity="0" style="transition:opacity .4s">
+            <line x1="435" y1="284" x2="423" y2="295" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
+            <line x1="431" y1="276" x2="419" y2="300" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round"/>
+          </g>
+          <g id="tw-ck3" opacity="0" style="transition:opacity .4s">
+            <line x1="333" y1="280" x2="347" y2="291" stroke="#c0392b" stroke-width="2" stroke-linecap="round"/>
+            <line x1="333" y1="290" x2="347" y2="299" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round"/>
+          </g>
+
+          <g id="tw-str1" opacity="0" style="transition:opacity .5s">
+            <line x1="326" y1="140" x2="302" y2="162" stroke="#c0392b"
+                  stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#tw-aw)"/>
+            <text x="284" y="160" text-anchor="middle"
+                  font-size="9" font-family="'Plus Jakarta Sans',sans-serif" fill="#7a1f1f">pressure</text>
+          </g>
+          <g id="tw-str2" opacity="0" style="transition:opacity .5s">
+            <line x1="354" y1="130" x2="378" y2="152" stroke="#c0392b"
+                  stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#tw-aw)"/>
+            <text x="397" y="150" text-anchor="middle"
+                  font-size="9" font-family="'Plus Jakarta Sans',sans-serif" fill="#7a1f1f">pressure</text>
+          </g>
+          <g id="tw-str3" opacity="0" style="transition:opacity .5s">
+            <line x1="340" y1="108" x2="340" y2="82" stroke="#c0392b"
+                  stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#tw-aw)"/>
+            <text x="340" y="76" text-anchor="middle"
+                  font-size="9" font-family="'Plus Jakarta Sans',sans-serif" fill="#7a1f1f">overload</text>
+          </g>
+
+          <g id="tw-bdg" style="transition:opacity .4s">
+            <rect x="282" y="44" width="116" height="28" rx="14"
+                  fill="#e1f5ee" stroke="#1D9E75" stroke-width="0.5"/>
+            <text x="340" y="62" text-anchor="middle"
+                  font-size="12" font-family="'Plus Jakarta Sans',sans-serif"
+                  fill="#085041" font-weight="600">Spine stable &#10003;</text>
+          </g>
+
+          <g id="tw-pain" opacity="0" style="transition:opacity .5s">
+            <line x1="340" y1="38" x2="340" y2="26" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="358" y1="43" x2="368" y2="34" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="322" y1="43" x2="312" y2="34" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="363" y1="58" x2="375" y2="55" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="317" y1="58" x2="305" y2="55" stroke="#c0392b" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="340" cy="60" r="26" fill="#fde8e8" stroke="#c0392b" stroke-width="1.2"/>
+            <text x="340" y="56" text-anchor="middle"
+                  font-size="10" font-family="'Plus Jakarta Sans',sans-serif"
+                  fill="#7a1f1f" font-weight="700">PAIN</text>
+            <text x="340" y="69" text-anchor="middle"
+                  font-size="8" font-family="'Plus Jakarta Sans',sans-serif" fill="#7a1f1f">flare-up</text>
+          </g>
+        </svg>
+
+        <div class="tw-btn-row">
+          <div class="tw-pill" id="tw-p1">Core stability</div>
+          <div class="tw-pill" id="tw-p2">Flexibility</div>
+          <div class="tw-pill" id="tw-p3">Movement balance</div>
+          <div class="tw-pill tw-replay" id="tw-replay" onclick="twStartAnim()">&#8634; Replay</div>
+        </div>
+
+        <div class="tw-dots">
+          <div class="tw-dot" id="tw-d0"></div>
+          <div class="tw-dot" id="tw-d1"></div>
+          <div class="tw-dot" id="tw-d2"></div>
+          <div class="tw-dot" id="tw-d3"></div>
+        </div>
+
+        <p class="tw-status" id="tw-stat">All three supports intact &mdash; spine holds.</p>
+      </div>
+
+      <!-- 4. Second paragraph — centered -->
+      <p class="font-body text-base leading-relaxed text-center max-w-2xl mx-auto mt-8 mb-8" style="color: var(--color-text-secondary);">
+        The problem isn't the pain. The problem is the <strong style="color: var(--color-text);">instability that keeps provoking it.</strong> Until all three legs are stable and balanced, the pain will keep returning &mdash; no matter how many adjustments or stretch routines you try.
+      </p>
+
+      <!-- 5. "This is why" — 40% bigger (text-sm/base → text-lg/xl) -->
+      <p class="font-body text-center text-base md:text-lg font-semibold mt-4 leading-relaxed" style="color: var(--color-accent);">
+        This is why we took on the challenge to create a program that addresses all three simultaneously &mdash; in the correct sequence, from the correct clinical and strength training foundation.
+      </p>
+
+      <script>
+      (function () {
+        var GREEN = '#1D9E75', RED = '#c0392b';
+        var steps = [
+          { leg: 1, pill: 'tw-p1', tilt: -9, cracks: [1], stress: [1], lbId: 'tw-lb1', lbTxt: '\u2715 Core gone', dot: 1, dotCls: 'current', statusTxt: 'Without core stability, your spine compensates \u2014 new pressure points form with every movement.', statusCls: 'warn' },
+          { leg: 3, pill: 'tw-p3', tilt: -15, cracks: [1, 3], stress: [1, 3], lbId: 'tw-lb3', lbTxt: '\u2715 Balance gone', dot: 2, dotCls: 'current', statusTxt: 'Two supports gone. Your back is overloaded \u2014 a flare-up is waiting to happen.', statusCls: 'bad' },
+          { leg: 2, pill: 'tw-p2', tilt: 0, cracks: [1, 2, 3], stress: [1, 2, 3], lbId: 'tw-lb2', lbTxt: '\u2715 Flexibility gone', dot: 3, dotCls: 'all-bad', statusTxt: '"Going out from picking up a pen" isn\'t bad luck. This is exactly why.', statusCls: 'bad', allBroken: true }
+        ];
+
+        var g = document.getElementById('tw-verts');
+        for (var i = 0; i < 10; i++) {
+          var y = 90 + i * 18, w = 34 - i * 1.5;
+          var r = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+          r.setAttribute('x', 340 - w / 2); r.setAttribute('y', y);
+          r.setAttribute('width', w); r.setAttribute('height', 12);
+          r.setAttribute('rx', 3); r.setAttribute('fill', '#f0ebe2');
+          r.setAttribute('stroke', '#c8bfa8'); r.setAttribute('stroke-width', '0.5');
+          g.appendChild(r);
+        }
+
+        function setLeg(n, ok) {
+          document.getElementById('tw-l' + n).setAttribute('stroke', ok ? GREEN : RED);
+          document.getElementById('tw-f' + n).setAttribute('fill', ok ? GREEN : RED);
+        }
+        function setTilt(angle) {
+          document.getElementById('tw-spg').setAttribute('transform', 'rotate(' + angle + ',340,270)');
+          var bk = [1,2,3].filter(function(n){ return document.getElementById('tw-l'+n).getAttribute('stroke') === RED; }).length;
+          document.getElementById('tw-shad').setAttribute('rx', Math.max(55, 130 - bk * 24));
+        }
+        function flashPill(id) {
+          var el = document.getElementById(id);
+          el.classList.add('tw-flash');
+          setTimeout(function () { el.classList.remove('tw-flash'); }, 500);
+        }
+        function setDot(idx, cls) {
+          for (var i = 0; i < idx; i++) document.getElementById('tw-d' + i).className = 'tw-dot done';
+          if (idx < 4) document.getElementById('tw-d' + idx).className = 'tw-dot ' + cls;
+        }
+        function shakeSpine() {
+          var sp = document.getElementById('tw-spg');
+          var angles = [0, -18, 20, -14, 10, -6, 0], i = 0;
+          (function step() {
+            if (i >= angles.length) { sp.setAttribute('transform', 'rotate(0,340,270)'); return; }
+            sp.setAttribute('transform', 'rotate(' + angles[i] + ',340,270)'); i++;
+            setTimeout(step, 80);
+          })();
+        }
+        function setStatus(txt, cls) {
+          var el = document.getElementById('tw-stat');
+          el.textContent = txt;
+          el.className = 'tw-status' + (cls ? ' ' + cls : '');
+        }
+        function reset() {
+          [1, 2, 3].forEach(function (n) {
+            setLeg(n, true);
+            document.getElementById('tw-ck' + n).setAttribute('opacity', '0');
+            document.getElementById('tw-str' + n).setAttribute('opacity', '0');
+            document.getElementById('tw-p' + n).className = 'tw-pill';
+          });
+          document.getElementById('tw-lb1').textContent = 'Core stability';
+          document.getElementById('tw-lb2').textContent = 'Flexibility';
+          document.getElementById('tw-lb3').textContent = 'Movement balance';
+          ['tw-ls1','tw-ls2','tw-ls3'].forEach(function(id){ document.getElementById(id).setAttribute('fill', '#6b6b6b'); });
+          ['tw-lb1','tw-lb2','tw-lb3'].forEach(function(id){ document.getElementById(id).setAttribute('fill', '#0F6E56'); });
+          document.getElementById('tw-spg').setAttribute('transform', 'rotate(0,340,270)');
+          document.getElementById('tw-shad').setAttribute('rx', '130');
+          document.getElementById('tw-bdg').setAttribute('opacity', '1');
+          document.getElementById('tw-pain').setAttribute('opacity', '0');
+          for (var i = 0; i < 4; i++) document.getElementById('tw-d' + i).className = 'tw-dot';
+          setStatus('All three supports intact \u2014 spine holds.', '');
+        }
+
+        var timers = [];
+        function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+        function t(fn, delay) { timers.push(setTimeout(fn, delay)); }
+
+        window.twStartAnim = function () {
+          clearTimers(); reset();
+          document.getElementById('tw-d0').className = 'tw-dot current';
+          steps.forEach(function (step, idx) {
+            var base = (idx + 1) * 2000;
+            t(function (s) { return function () { flashPill(s.pill); document.getElementById(s.pill).classList.add('active-leg'); }; }(step), base);
+            t(function (s) { return function () { setLeg(s.leg, false); s.cracks.forEach(function (n) { document.getElementById('tw-ck' + n).setAttribute('opacity', '1'); }); document.getElementById(s.lbId).textContent = s.lbTxt; document.getElementById(s.lbId).setAttribute('fill', '#7a1f1f'); document.getElementById('tw-bdg').setAttribute('opacity', '0'); }; }(step), base + 200);
+            t(function (s) { return function () { s.stress.forEach(function (n) { document.getElementById('tw-str' + n).setAttribute('opacity', '1'); }); }; }(step), base + 450);
+            t(function (s) { return function () { if (s.allBroken) { shakeSpine(); } else { setTilt(s.tilt); } }; }(step), base + 650);
+            if (step.allBroken) { t(function () { document.getElementById('tw-pain').setAttribute('opacity', '1'); }, base + 900); }
+            t(function (s, i) { return function () { setDot(i + 1, s.dotCls); setStatus(s.statusTxt, s.statusCls); }; }(step, idx), base + 700);
+          });
+        };
+
+        /* Auto-play when section scrolls into view */
+        var played = false;
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting && !played) { played = false; twStartAnim(); }
+          });
+        }, { threshold: 0.3 });
+        observer.observe(document.getElementById('tw-sv'));
+      })();
+      </script>
+    </div>
+  </section>
+
+  <!-- ==================== AUTHORITY / WHO BUILT THIS ==================== -->
+  <section class="section-alt py-14 md:py-20">
+    <div class="container-mid px-5">
+      <p class="text-center font-body font-semibold text-xs tracking-widest uppercase mb-3" style="color: var(--color-accent);">Who Built This</p>
+      <h2 class="section-heading font-display text-2xl md:text-4xl text-center mb-3" style="color: var(--color-text);">A Collaboration That Doesn't Exist Anywhere Else</h2>
+      <div class="w-12 h-0.5 mx-auto mb-6 rounded-full" style="background: var(--color-accent);"></div>
+
+      <p class="body-md font-body text-sm md:text-base leading-relaxed text-center mb-10" style="color: var(--color-text-secondary);">
+        Most back pain programs are built by one person &mdash; which is why they are one-dimensional. The Good Back Basics was built by bringing both world-class disciplines into a single, sequenced system.
+      </p>
+
+      <div class="space-y-6">
+        <!-- Marcin -->
+        <div class="card-lifted bio-card p-6 md:p-8">
+          <div class="flex flex-col sm:flex-row items-start gap-5">
+            <img src="Sales page Media/Marcin Dochnal.avif" alt="Dr. Marcin Dorchnal" class="w-20 h-20 rounded-xl object-cover border flex-shrink-0" style="border-color: rgba(0,0,0,0.08);">
+            <div>
+              <h3 class="font-display text-xl md:text-2xl mb-1" style="color: var(--color-text);">Dr. Marcin Dorchnal</h3>
+              <p class="bio-title font-body text-xs font-semibold tracking-wide uppercase mb-3" style="color: var(--color-accent);">Chiropractor / 15 Years Clinical Practice & 57,000+ Patient Treatments</p>
+              <p class="bio-body font-body text-sm leading-relaxed" style="color: var(--color-text-secondary);">After years of watching patients return with the same pain after every treatment, Dr. Marcin identified the pattern: solutions weren't failing because patients weren't trying &mdash; they were failing because they only addressed one part of the problem. The Good Back Basics was built to change that.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Paul -->
+        <div class="card-lifted bio-card p-6 md:p-8">
+          <div class="flex flex-col sm:flex-row items-start gap-5">
+            <img src="Sales page Media/Paul Bielak.avif" alt="Paul Bielak" class="w-20 h-20 rounded-xl object-cover border flex-shrink-0" style="border-color: rgba(0,0,0,0.08);">
+            <div>
+              <h3 class="font-display text-xl md:text-2xl mb-1" style="color: var(--color-text);">Paul Bielak</h3>
+              <p class="bio-title font-body text-xs font-semibold tracking-wide uppercase mb-3" style="color: var(--color-accent);">BackFitPro-Certified Coach / 30,000+ Hours in Spinal Rehabilitation & 30+ Years of Movement Coaching</p>
+              <p class="bio-body font-body text-sm leading-relaxed" style="color: var(--color-text-secondary);">Paul bridges the gap between clinical rehabilitation and real-world movement training. His BackFitPro certification and specialisation in spinal rehabilitation ensures every exercise in the program is both clinically sound and genuinely achievable at home.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card combo-card p-5 mt-8 text-center">
+        <p class="font-body text-sm leading-relaxed" style="color: var(--color-text-secondary);">
+          <strong style="color: var(--color-text);">Why This Combination Matters:</strong> A chiropractor brings balance into the body with therapy while the trainer progressively loads the body in order to build resilience and facilitate positive adaptations. This synergy creates a space where <strong style="color: var(--color-accent);">therapy meets training.</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SOLUTION / PROGRAM ==================== -->
+  <section class="section-primary py-14 md:py-20">
+    <div class="container-mid px-5">
+      <p class="text-center font-body font-semibold text-xs tracking-widest uppercase mb-3" style="color: var(--color-accent);">The Solution</p>
+      <h2 class="section-heading font-display text-2xl md:text-4xl text-center mb-3" style="color: var(--color-text);">Introducing The Good Back Basics</h2>
+      <div class="w-12 h-0.5 mx-auto mb-8 rounded-full" style="background: var(--color-accent);"></div>
+
+      <!-- Product image -->
+      <div class="card-lifted overflow-hidden mb-8">
+        <img src="Sales page Media/Course product image.jpg" alt="Good Back Basics Course" class="w-full block">
+      </div>
+
+      <p class="body-md font-body text-sm md:text-base leading-relaxed text-center mb-10" style="color: var(--color-text-secondary);">
+        A holistic system that addresses all three core elements that make up a strong and healthy back. It can be done in <strong style="color: var(--color-text);">10 minutes a day</strong>, from the comfort of your home and without fancy equipment.
+      </p>
+
+      <!-- Module 1 -->
+      <div class="module-card mb-6">
+        <img src="Thumbnails/M1_Introduction to Back Health_text.jpg" alt="Module 1: Introduction to Back Health" class="w-full block">
+        <div class="p-5 md:p-6">
+          <p class="font-body text-xs font-semibold tracking-wide uppercase mb-1" style="color: var(--color-accent);">Module 1</p>
+          <h3 class="font-display text-xl md:text-2xl mb-3" style="color: var(--color-text);">Introduction to Back Health + Quick Wins</h3>
+          <p class="font-body text-base md:text-[17px] leading-relaxed mb-4" style="color: var(--color-text-secondary);">Before rebuilding back stability, you need to understand what's breaking it. This module covers foundational back health principles (Alignment, Posture and Tone) + gives best exercises to alleviate back-pain.</p>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-2">
+              <span style="color: var(--color-accent);" class="mt-0.5 flex-shrink-0">&rarr;</span>
+              <span class="font-body text-[15px]" style="color: var(--color-text-secondary);">The correct principles of spinal alignment (not "sit up straight" &mdash; the mechanics that actually matter)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color: var(--color-accent);" class="mt-0.5 flex-shrink-0">&rarr;</span>
+              <span class="font-body text-[15px]" style="color: var(--color-text-secondary);">Diaphragmatic breathing to help support the trunk and spine from within</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color: var(--color-accent);" class="mt-0.5 flex-shrink-0">&rarr;</span>
+              <span class="font-body text-[15px]" style="color: var(--color-text-secondary);">Immediate relief positions using only a hand towel &mdash; reduce pain fast while the deeper work begins</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Module 2 -->
+      <div class="module-card mb-6">
+        <img src="Thumbnails/M2_Foundational Movements_text.jpg" alt="Module 2: Foundational Movements" class="w-full block">
+        <div class="p-5 md:p-6">
+          <p class="font-body text-xs font-semibold tracking-wide uppercase mb-1" style="color: var(--color-accent);">Module 2</p>
+          <h3 class="font-display text-xl md:text-2xl mb-1" style="color: var(--color-text);">Foundational Movements &mdash; Rebuild Stability &amp; Strength</h3>
+          <p class="font-body text-xs mb-3" style="color: var(--color-text-secondary); opacity: 0.7;">The core of the program. The work that breaks the cycle.</p>
+          <p class="font-body text-base md:text-[17px] leading-relaxed mb-4" style="color: var(--color-text-secondary);">This is where the real transformation happens. A 10-minute daily routine &mdash; 5 specific exercises &mdash; designed to strengthen your back across multiple movement vectors. This isn't a generic "core workout." Every exercise targets the precise stability patterns which a pain-free back needs!</p>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-2">
+              <span style="color: var(--color-accent);" class="mt-0.5 flex-shrink-0">&rarr;</span>
+              <span class="font-body text-[15px]" style="color: var(--color-text-secondary);">5 evidence-based exercises selected for maximum impact</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color: var(--color-accent);" class="mt-0.5 flex-shrink-0">&rarr;</span>
+              <span class="font-body text-[15px]" style="color: var(--color-text-secondary);">A week-by-week progression plan &mdash; so your spine rebuilds safely, without risk of flare-up</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color: var(--color-accent);" class="mt-0.5 flex-shrink-0">&rarr;</span>
+              <span class="font-body text-[15px]" style="color: var(--color-text-secondary);">Multi-vector strengthening that makes your spine stable in every direction, not just one</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Module 3 -->
+      <div class="module-card">
+        <img src="Thumbnails/M3_Daily Practices for Prevention_text.jpg" alt="Module 3: Daily Practices for Prevention" class="w-full block">
+        <div class="p-5 md:p-6">
+          <p class="font-body text-xs font-semibold tracking-wide uppercase mb-1" style="color: var(--color-accent);">Module 3</p>
+          <h3 class="font-display text-xl md:text-2xl mb-1" style="color: var(--color-text);">Daily Practice for Prevention &mdash; Never Go Back</h3>
+          <p class="font-body text-xs mb-3" style="color: var(--color-text-secondary); opacity: 0.7;">The maintenance system. Where the results become permanent.</p>
+          <p class="font-body text-base md:text-[17px] leading-relaxed mb-4" style="color: var(--color-text-secondary);">Most programs stop at relief. This one builds you a system that prevents the pain from returning. You'll learn which stretches genuinely help (and which make instability worse), and how to maintain your results with a sustainable daily practice.</p>
+          <ul class="space-y-2.5">
+            <li class="flex items-start gap-2">
+              <span style="color: var(--color-accent);" class="mt-0.5 flex-shrink-0">&rarr;</span>
+              <span class="font-body text-[15px]" style="color: var(--color-text-secondary);">The 2 specific stretches for the parts of the body where they matter the most</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color: var(--color-accent);" class="mt-0.5 flex-shrink-0">&rarr;</span>
+              <span class="font-body text-[15px]" style="color: var(--color-text-secondary);">Which commonly recommended stretches to stop immediately (they may be prolonging your problem)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color: var(--color-accent);" class="mt-0.5 flex-shrink-0">&rarr;</span>
+              <span class="font-body text-[15px]" style="color: var(--color-text-secondary);">A long-term maintenance protocol so your strong back stays strong</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color: var(--color-accent);" class="mt-0.5 flex-shrink-0">&rarr;</span>
+              <span class="font-body text-[15px]" style="color: var(--color-text-secondary);">2 movement tools (Horse Stance / Forward Stance) for use at counters to spare the spine and strengthen the legs</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span style="color: var(--color-accent);" class="mt-0.5 flex-shrink-0">&rarr;</span>
+              <span class="font-body text-[15px]" style="color: var(--color-text-secondary);">A de-compression strategy for the low back to bring the body back to balance</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WHAT YOU GET ==================== -->
+  <section class="section-alt py-14 md:py-20">
+    <div class="container-mid px-5">
+      <p class="text-center font-body font-semibold text-xs tracking-widest uppercase mb-3" style="color: var(--color-accent);">Everything Included</p>
+      <h2 class="section-heading font-display text-2xl md:text-4xl text-center mb-3" style="color: var(--color-text);">Here's What You Get Today</h2>
+      <div class="w-12 h-0.5 mx-auto mb-10 rounded-full" style="background: var(--color-accent);"></div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="card feature-card p-5">
+          <span class="text-2xl mb-2 block">&#x1F3AC;</span>
+          <h3 class="font-body font-bold text-sm mb-1" style="color: var(--color-text);">15+ Training Videos</h3>
+          <p class="font-body text-xs leading-relaxed" style="color: var(--color-text-secondary);">Professional, follow-along exercise demonstrations. Watch, pause, and repeat at your own pace.</p>
+        </div>
+        <div class="card feature-card p-5">
+          <span class="text-2xl mb-2 block">&#x1F4CB;</span>
+          <h3 class="font-body font-bold text-sm mb-1" style="color: var(--color-text);">Downloadable PDF Guide</h3>
+          <p class="font-body text-xs leading-relaxed" style="color: var(--color-text-secondary);">Full exercise instructions you can print and keep by your mat. No screen required.</p>
+        </div>
+        <div class="card feature-card p-5">
+          <span class="text-2xl mb-2 block">&#x1F4C5;</span>
+          <h3 class="font-body font-bold text-sm mb-1" style="color: var(--color-text);">Week-by-Week Progression Plan</h3>
+          <p class="font-body text-xs leading-relaxed" style="color: var(--color-text-secondary);">Exact reps, sets, and intensity guidance for every week. No guessing what to do next.</p>
+        </div>
+        <div class="card feature-card p-5">
+          <span class="text-2xl mb-2 block">&#x1F504;</span>
+          <h3 class="font-body font-bold text-sm mb-1" style="color: var(--color-text);">Long-Term Maintenance Plan</h3>
+          <p class="font-body text-xs leading-relaxed" style="color: var(--color-text-secondary);">The daily protocol that keeps your back strong once you've rebuilt it.</p>
+        </div>
+        <div class="card feature-card p-5">
+          <span class="text-2xl mb-2 block">&#x267E;</span>
+          <h3 class="font-body font-bold text-sm mb-1" style="color: var(--color-text);">Lifetime Access</h3>
+          <p class="font-body text-xs leading-relaxed" style="color: var(--color-text-secondary);">The course is yours forever. Revisit any time, and get all future updates at no additional cost.</p>
+        </div>
+        <div class="card feature-card p-5">
+          <span class="text-2xl mb-2 block">&#x1F3E0;</span>
+          <h3 class="font-body font-bold text-sm mb-1" style="color: var(--color-text);">100% Home-Based</h3>
+          <p class="font-body text-xs leading-relaxed" style="color: var(--color-text-secondary);">No gym, no equipment, no appointments. Everything works in your living room, bedroom, or office.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BONUSES ==================== -->
+  <section class="section-primary py-14 md:py-20">
+    <div class="container-mid px-5">
+      <p class="text-center font-body font-semibold text-xs tracking-widest uppercase mb-3" style="color: var(--color-accent);">Free Bonuses</p>
+      <h2 class="section-heading font-display text-2xl md:text-4xl text-center mb-3" style="color: var(--color-text);">You Will Also Get These Bonuses For Free</h2>
+      <div class="w-12 h-0.5 mx-auto mb-10 rounded-full" style="background: var(--color-accent);"></div>
+
+      <div class="space-y-5">
+        <div class="bonus-card">
+          <img src="Thumbnails/Sciatic nerve release.jpg" alt="Sciatic Nerve Release Techniques" class="w-full block">
+          <div class="p-5">
+            <span class="inline-block text-xs font-body font-bold tracking-wide uppercase px-3 py-1 rounded-full mb-2 text-white" style="background: var(--color-accent);">Bonus #1</span>
+            <h3 class="font-display text-lg md:text-xl" style="color: var(--color-text);">Sciatic Nerve Release Techniques</h3>
+          </div>
+        </div>
+        <div class="bonus-card">
+          <img src="Thumbnails/Standing release of the spine, neck, hips.jpg" alt="Neck Tension Release" class="w-full block">
+          <div class="p-5">
+            <span class="inline-block text-xs font-body font-bold tracking-wide uppercase px-3 py-1 rounded-full mb-2 text-white" style="background: var(--color-accent);">Bonus #2</span>
+            <h3 class="font-display text-lg md:text-xl" style="color: var(--color-text);">Neck Tension Release with a Tennis Ball</h3>
+          </div>
+        </div>
+        <div class="bonus-card">
+          <img src="Thumbnails/M3_Daily Practices for Prevention.jpg" alt="Advanced Daily Lower Back Compensation Exercises" class="w-full block">
+          <div class="p-5">
+            <span class="inline-block text-xs font-body font-bold tracking-wide uppercase px-3 py-1 rounded-full mb-2 text-white" style="background: var(--color-accent);">Bonus #3</span>
+            <h3 class="font-display text-lg md:text-xl" style="color: var(--color-text);">Advanced Daily Lower Back Compensation Exercises</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS ==================== -->
+  <section class="section-alt py-14 md:py-20">
+    <div class="container-wide px-5">
+      <p class="text-center font-body font-semibold text-xs tracking-widest uppercase mb-3" style="color: var(--color-accent);">Real Results</p>
+      <h2 class="section-heading font-display text-2xl md:text-4xl text-center mb-3" style="color: var(--color-text);">Hear From People Who Fixed Their Backs</h2>
+      <div class="w-12 h-0.5 mx-auto mb-10 rounded-full" style="background: var(--color-accent);"></div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="relative rounded-xl overflow-hidden" style="aspect-ratio:2/3;">
+          <img src="Testimonials/thumbnails/Almar Hilmarsson.jpg" alt="Almar Hilmarsson testimonial" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-3 py-3">
+            <p class="font-body font-semibold text-white text-xs">Almar Hilmarsson</p>
+          </div>
+        </div>
+        <div class="relative rounded-xl overflow-hidden" style="aspect-ratio:2/3;">
+          <img src="Testimonials/thumbnails/Jessica Patterson.jpg" alt="Jessica Patterson testimonial" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-3 py-3">
+            <p class="font-body font-semibold text-white text-xs">Jessica Patterson</p>
+          </div>
+        </div>
+        <div class="relative rounded-xl overflow-hidden" style="aspect-ratio:2/3;">
+          <img src="Testimonials/thumbnails/Casey Phelps.jpg" alt="Casey Phelps testimonial" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-3 py-3">
+            <p class="font-body font-semibold text-white text-xs">Casey Phelps</p>
+          </div>
+        </div>
+        <div class="relative rounded-xl overflow-hidden" style="aspect-ratio:2/3;">
+          <img src="Testimonials/thumbnails/Ade Adeleye.jpg" alt="Ade Adeleye testimonial" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-3 py-3">
+            <p class="font-body font-semibold text-white text-xs">Ade Adeleye</p>
+          </div>
+        </div>
+        <div class="relative rounded-xl overflow-hidden" style="aspect-ratio:2/3;">
+          <img src="Testimonials/thumbnails/Lukáš Pítra.jpg" alt="Lukas Pitra testimonial" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-3 py-3">
+            <p class="font-body font-semibold text-white text-xs">Lukas Pitra</p>
+          </div>
+        </div>
+        <div class="relative rounded-xl overflow-hidden" style="aspect-ratio:2/3;">
+          <img src="Testimonials/thumbnails/Rowan Manns.jpg" alt="Rowan Manns testimonial" class="w-full h-full object-cover">
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-3 py-3">
+            <p class="font-body font-semibold text-white text-xs">Rowan Manns</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRICING ==================== -->
+  <section id="pricing" class="section-primary py-14 md:py-20">
+    <div class="container-narrow px-5">
+      <p class="text-center font-body font-semibold text-xs tracking-widest uppercase mb-3" style="color: var(--color-accent);">Special Launch Pricing</p>
+      <h2 class="section-heading font-display text-2xl md:text-4xl text-center mb-3" style="color: var(--color-text);">How Much Would This Cost From Specialists?</h2>
+      <div class="w-12 h-0.5 mx-auto mb-8 rounded-full" style="background: var(--color-accent);"></div>
+
+      <p class="readable-body font-body text-sm text-center leading-relaxed mb-8" style="color: var(--color-text-secondary);">
+        If you tried to get the same clinical knowledge and structured system individually:
+      </p>
+
+      <div class="space-y-3 mb-8">
+        <div class="flex justify-between items-baseline gap-4 pb-3" style="border-bottom: 1px solid rgba(0,0,0,0.06);">
+          <span class="price-row-label font-body text-xs md:text-sm" style="color: var(--color-text-secondary);">Chiropractor consultations (initial + follow-ups)</span>
+          <span class="price-row-amount font-body text-sm line-through whitespace-nowrap" style="color: #999;">$1,200+</span>
+        </div>
+        <div class="flex justify-between items-baseline gap-4 pb-3" style="border-bottom: 1px solid rgba(0,0,0,0.06);">
+          <span class="price-row-label font-body text-xs md:text-sm" style="color: var(--color-text-secondary);">Private physical therapy course</span>
+          <span class="price-row-amount font-body text-sm line-through whitespace-nowrap" style="color: #999;">$1,800+</span>
+        </div>
+        <div class="flex justify-between items-baseline gap-4 pb-3" style="border-bottom: 1px solid rgba(0,0,0,0.06);">
+          <span class="price-row-label font-body text-xs md:text-sm" style="color: var(--color-text-secondary);">StrongFirst specialist coaching</span>
+          <span class="price-row-amount font-body text-sm line-through whitespace-nowrap" style="color: #999;">$1,000+</span>
+        </div>
+        <div class="flex justify-between items-baseline gap-4 pb-3" style="border-bottom: 1px solid rgba(0,0,0,0.06);">
+          <span class="price-row-label font-body text-xs md:text-sm" style="color: var(--color-text-secondary);">Private clinical consultations</span>
+          <span class="price-row-amount font-body text-sm line-through whitespace-nowrap" style="color: #999;">$500+</span>
+        </div>
+        <div class="flex justify-between items-baseline gap-4 pt-1">
+          <span class="price-row-label font-body font-bold text-xs md:text-sm" style="color: var(--color-text);">Total if purchased separately</span>
+          <span class="price-row-amount font-body text-sm line-through whitespace-nowrap" style="color: #999;">$4,500+</span>
+        </div>
+      </div>
+
+      <!-- Price card -->
+      <div class="price-card p-6 md:p-8 text-center mb-6">
+        <p class="font-body text-sm mb-1" style="color: var(--color-text-secondary);">Regular price: <span class="line-through">$97</span></p>
+        <div class="flex items-baseline justify-center gap-2 mb-1">
+          <span class="price-amount font-display text-5xl md:text-6xl" style="color: var(--color-text);">$27</span>
+        </div>
+        <p class="font-body font-semibold text-sm mb-5" style="color: var(--color-accent);">You save $70 today</p>
+
+        <p class="font-body text-xs leading-relaxed mb-6" style="color: var(--color-text-secondary);">
+          The Good Back Basics &mdash; Complete 3-stage home program &middot; Lifetime access<br>
+          One-time payment &middot; No subscriptions &middot; No recurring fees
+        </p>
+
+        <a href="#" class="cta-btn cta-btn-lg block w-full py-4 rounded-xl font-body font-bold text-base md:text-lg tracking-wide mb-4">
+          Get Instant Access for $27 &rarr;
+        </a>
+
+        <p class="font-body text-xs" style="color: var(--color-text-secondary);">
+          &#x1F512; Secure checkout &middot; Instant lifetime access &middot; 30-day guarantee
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== GUARANTEE ==================== -->
+  <section class="section-alt py-14 md:py-20">
+    <div class="container-narrow px-5">
+      <div class="guarantee-card p-6 md:p-8 text-center">
+        <span class="text-4xl mb-3 block">&#x1F6E1;</span>
+        <h2 class="section-heading font-display text-2xl md:text-3xl mb-2" style="color: var(--color-text);">30-Day Money-Back Guarantee</h2>
+        <h3 class="readable-body font-body font-semibold text-sm mb-5" style="color: var(--color-accent);">Try It Risk-Free for 30 Days</h3>
+
+        <p class="readable-body font-body text-sm leading-relaxed mb-4" style="color: var(--color-text-secondary);">
+          Start the program. Follow the system. If you don't feel meaningfully better within 30 days &mdash; if you're not sleeping easier, sitting longer, or moving with more confidence &mdash; email us for a full refund.
+        </p>
+        <p class="readable-body font-body text-sm leading-relaxed mb-4" style="color: var(--color-text-secondary);">
+          No questions. No forms. No hassle. We process every refund within one business day.
+        </p>
+        <p class="readable-body font-body font-semibold text-sm" style="color: var(--color-text);">
+          You have nothing to lose and a pain-free back to gain.<br>
+          <span style="color: var(--color-accent);">The only risk is doing nothing.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== URGENCY ==================== -->
+  <section class="section-primary py-14 md:py-20">
+    <div class="container-narrow px-5 text-center">
+      <h2 class="section-heading font-display text-2xl md:text-4xl mb-3" style="color: var(--color-text);">The Cost of Waiting</h2>
+      <h3 class="readable-body font-body text-sm md:text-base mb-6" style="color: var(--color-text-secondary);">Every Day Without a System, the Problem Gets More Ingrained</h3>
+
+      <p class="readable-body font-body text-sm leading-relaxed mb-5" style="color: var(--color-text-secondary);">
+        Chronic back pain doesn't stay static. The longer the instability pattern goes unaddressed, the more your nervous system learns to protect around it. The more compensation patterns develop. The harder the reset becomes.
+      </p>
+      <p class="readable-body font-body text-sm leading-relaxed mb-8" style="color: var(--color-text-secondary);">
+        The people who "wait to see if it improves on its own" rarely find it does. The people who act &mdash; even with scepticism, even with uncertainty &mdash; are the ones who report results.
+      </p>
+
+      <a href="#pricing" class="cta-btn cta-btn-lg inline-block px-10 py-4 rounded-xl font-body font-bold text-base md:text-lg tracking-wide mb-4">
+        Start My Recovery for $27 &rarr;
+      </a>
+      <p class="font-body text-xs" style="color: var(--color-text-secondary);">30-day guarantee &middot; Lifetime access &middot; No subscriptions</p>
+    </div>
+  </section>
+
+  <!-- ==================== WHO IT'S FOR ==================== -->
+  <section class="section-alt py-14 md:py-20">
+    <div class="container-mid px-5">
+      <h2 class="section-heading font-display text-2xl md:text-4xl text-center mb-3" style="color: var(--color-text);">Is This Right For You?</h2>
+      <p class="font-body text-base text-center mb-8" style="color: var(--color-text-secondary);">Who The Good Back Basics Is Built For</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- For you -->
+        <div class="card p-5 md:p-6">
+          <h3 class="font-body font-bold text-base mb-4" style="color: var(--color-accent);">&#10003; This IS for you if&hellip;</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2">
+              <span class="checkmark flex-shrink-0 mt-0.5">&#10003;</span>
+              <span class="font-body text-base" style="color: var(--color-text-secondary);">You've had recurring back pain for months or years</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="checkmark flex-shrink-0 mt-0.5">&#10003;</span>
+              <span class="font-body text-base" style="color: var(--color-text-secondary);">You've tried treatments that only worked temporarily</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="checkmark flex-shrink-0 mt-0.5">&#10003;</span>
+              <span class="font-body text-base" style="color: var(--color-text-secondary);">You want to understand the root cause, not just manage symptoms</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="checkmark flex-shrink-0 mt-0.5">&#10003;</span>
+              <span class="font-body text-base" style="color: var(--color-text-secondary);">You can commit 10 minutes a day to a structured program</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="checkmark flex-shrink-0 mt-0.5">&#10003;</span>
+              <span class="font-body text-base" style="color: var(--color-text-secondary);">You want to do this at home, without equipment or appointments</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="checkmark flex-shrink-0 mt-0.5">&#10003;</span>
+              <span class="font-body text-base" style="color: var(--color-text-secondary);">You're tired of the pain controlling what you can and can't do</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="checkmark flex-shrink-0 mt-0.5">&#10003;</span>
+              <span class="font-body text-base" style="color: var(--color-text-secondary);">You want a solution designed by clinicians, not content creators</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Not for you -->
+        <div class="card p-5 md:p-6">
+          <h3 class="font-body font-bold text-base mb-4" style="color: #C0392B;">&#10007; This is NOT for you if&hellip;</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-2">
+              <span class="crossmark flex-shrink-0 mt-0.5">&#10007;</span>
+              <span class="font-body text-base" style="color: var(--color-text-secondary);">You have a recent acute injury (this is for chronic, recurring pain)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="crossmark flex-shrink-0 mt-0.5">&#10007;</span>
+              <span class="font-body text-base" style="color: var(--color-text-secondary);">You want a passive solution that requires no daily effort</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="crossmark flex-shrink-0 mt-0.5">&#10007;</span>
+              <span class="font-body text-base" style="color: var(--color-text-secondary);">You are experiencing pain alongside fever, unexplained weight loss, or loss of bladder or bowel control &mdash; please see a doctor immediately</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="crossmark flex-shrink-0 mt-0.5">&#10007;</span>
+              <span class="font-body text-base" style="color: var(--color-text-secondary);">You prefer someone to physically treat you indefinitely rather than building your own independence</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FAQ ==================== -->
+  <section class="section-primary py-14 md:py-20">
+    <div class="container-mid px-5">
+      <h2 class="section-heading font-display text-2xl md:text-4xl text-center mb-3" style="color: var(--color-text);">Frequently Asked Questions</h2>
+      <div class="w-12 h-0.5 mx-auto mb-10 rounded-full" style="background: var(--color-accent);"></div>
+
+      <div class="space-y-3">
+        <details class="faq-item">
+          <summary class="flex justify-between items-center gap-4 p-5 font-body font-semibold text-sm md:text-base" style="color: var(--color-text);">
+            How long does it take to see results?
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="font-body text-sm leading-relaxed" style="color: var(--color-text-secondary);">Many people report feeling significantly better within the first week. However, everyone's body is different. The program is designed to provide both immediate relief and long-term healing. Most people achieve lasting results within 4-6 weeks of following the program consistently.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="flex justify-between items-center gap-4 p-5 font-body font-semibold text-sm md:text-base" style="color: var(--color-text);">
+            Do I need any special equipment?
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="font-body text-sm leading-relaxed" style="color: var(--color-text-secondary);">No! The Good Back Basics is designed to be done with minimal equipment. Most exercises can be done with just your body weight. For some exercises, we recommend having a yoga mat and resistance band, but these are optional and inexpensive.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="flex justify-between items-center gap-4 p-5 font-body font-semibold text-sm md:text-base" style="color: var(--color-text);">
+            How much time do I need to commit each day?
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="font-body text-sm leading-relaxed" style="color: var(--color-text-secondary);">The program is designed to fit into busy schedules. Most daily routines take 15-20 minutes. You can break these into smaller 5-10 minute sessions throughout the day if needed.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="flex justify-between items-center gap-4 p-5 font-body font-semibold text-sm md:text-base" style="color: var(--color-text);">
+            Will this work for my specific type of back pain?
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="font-body text-sm leading-relaxed" style="color: var(--color-text-secondary);">The Good Back Basics addresses the root causes that contribute to most types of chronic back pain &mdash; weak core, tight muscles, and poor movement patterns. Whether you have lower back pain, upper back pain, sciatica, or general discomfort, this comprehensive approach targets the underlying dysfunction. However, if you have a serious medical condition requiring surgery or immediate medical attention, please consult your doctor first.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="flex justify-between items-center gap-4 p-5 font-body font-semibold text-sm md:text-base" style="color: var(--color-text);">
+            What if I've tried everything and nothing has worked?
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="font-body text-sm leading-relaxed" style="color: var(--color-text-secondary);">That's exactly why we created this program! Most treatments only address symptoms or focus on one aspect of the problem. The Good Back Basics is different because it addresses all key aspects of building a strong and healthy back. Plus, with our 30-day money-back guarantee, there's zero risk to try it.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="flex justify-between items-center gap-4 p-5 font-body font-semibold text-sm md:text-base" style="color: var(--color-text);">
+            How long do I have access to the course?
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="font-body text-sm leading-relaxed" style="color: var(--color-text-secondary);">You get lifetime access! Once you enroll, the course is yours forever. You can revisit the materials anytime you need a refresher, and you'll get all future updates at no additional cost.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="flex justify-between items-center gap-4 p-5 font-body font-semibold text-sm md:text-base" style="color: var(--color-text);">
+            What's your refund policy?
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="font-body text-sm leading-relaxed" style="color: var(--color-text-secondary);">Simple: If you're not completely satisfied within 30 days, just send us an email and we'll refund 100% of your purchase. We process refunds within one business day. No hassle, no questions asked.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FINAL CTA ==================== -->
+  <section class="section-alt py-14 md:py-24">
+    <div class="container-narrow px-5 text-center">
+      <h2 class="section-heading font-display text-3xl md:text-5xl mb-3" style="color: var(--color-text);">Ready to Fix Your Back</h2>
+      <h3 class="final-sub font-body text-sm md:text-base mb-6" style="color: var(--color-text-secondary);">Stop Managing the Pain. Start Fixing the Problem.</h3>
+
+      <p class="final-body font-body text-sm leading-relaxed mb-8" style="color: var(--color-text-secondary);">
+        500+ people have already gone through the same cycle of failed treatments, rediscovered hope in this program, and built a back that works for them again. The system is ready. The only question is whether today is the day you decide the cycle ends.
+      </p>
+
+      <div class="final-checklist space-y-2 mb-8 text-left max-w-xs mx-auto">
+        <p class="font-body text-sm" style="color: var(--color-text-secondary);"><span class="checkmark">&#10003;</span>&ensp;<span>15+ Training Videos</span></p>
+        <p class="font-body text-sm" style="color: var(--color-text-secondary);"><span class="checkmark">&#10003;</span>&ensp;<span>Week-by-Week Progression Plan</span></p>
+        <p class="font-body text-sm" style="color: var(--color-text-secondary);"><span class="checkmark">&#10003;</span>&ensp;<span>Downloadable PDF Guide</span></p>
+        <p class="font-body text-sm" style="color: var(--color-text-secondary);"><span class="checkmark">&#10003;</span>&ensp;<span>Long-Term Maintenance Plan</span></p>
+        <p class="font-body text-sm" style="color: var(--color-text-secondary);"><span class="checkmark">&#10003;</span>&ensp;<span>Lifetime Access</span></p>
+        <p class="font-body text-sm" style="color: var(--color-text-secondary);"><span class="checkmark">&#10003;</span>&ensp;<span>30-Day Money-Back Guarantee</span></p>
+      </div>
+
+      <a href="#pricing" class="cta-btn cta-btn-lg inline-block px-10 py-4 rounded-xl font-body font-bold text-base md:text-lg tracking-wide mb-4">
+        Get Instant Access for $27 &rarr;
+      </a>
+      <p class="font-body text-xs" style="color: var(--color-text-secondary);">One-time payment &middot; No subscriptions &middot; Instant access</p>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-8" style="background: var(--color-bg); border-top: 1px solid rgba(0,0,0,0.06);">
+    <div class="container-mid px-5 text-center">
+      <img src="Sales page Media/Logo.png" alt="Good Back Basics" class="h-10 mx-auto mb-4 opacity-70">
+      <p class="font-body text-xs leading-relaxed mb-3" style="color: var(--color-text-secondary);">
+        &copy; 2026 The Good Back Basics &middot; Dr. Marcin Dorchnal &middot; All Rights Reserved
+      </p>
+      <p class="font-body text-[10px] leading-relaxed max-w-lg mx-auto" style="color: #999;">
+        Results described are based on the experiences of specific individuals. Individual results will vary. This program is educational in nature and is not intended to diagnose, treat, cure, or prevent any medical condition. Always consult a qualified healthcare professional before beginning any new exercise or wellness program. This site is not affiliated with or endorsed by Facebook, Inc.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script>
+    // Sticky CTA visibility
+    const stickyCta = document.getElementById('stickyCta');
+    const pricingSection = document.getElementById('pricing');
+
+    function updateStickyCta() {
+      const scrollY = window.scrollY;
+      const heroHeight = window.innerHeight * 0.6;
+      const pricingRect = pricingSection.getBoundingClientRect();
+      const isPricingVisible = pricingRect.top < window.innerHeight && pricingRect.bottom > 0;
+
+      if (scrollY > heroHeight && !isPricingVisible) {
+        stickyCta.classList.add('visible');
+      } else {
+        stickyCta.classList.remove('visible');
+      }
+    }
+
+    window.addEventListener('scroll', updateStickyCta, { passive: true });
+    updateStickyCta();
+
+    // Testimonial video play
+    function playTestimonial(container) {
+      const video = container.querySelector('video');
+      if (video.paused) {
+        document.querySelectorAll('.video-testimonial video').forEach(v => {
+          if (v !== video) { v.pause(); v.parentElement.classList.remove('playing'); }
+        });
+        video.play();
+        video.controls = true;
+        container.classList.add('playing');
+      } else {
+        video.pause();
+        container.classList.remove('playing');
+      }
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (link.getAttribute('href') === '#pricing') {
+            stickyCta.classList.remove('visible');
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
